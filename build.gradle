@@ -1,0 +1,26 @@
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    project.ext {
+        groovyVersion = '2.2.1'
+        guavaVersion = '15.0'
+        junitVersion = '4.11'
+        slf4jVersion = '1.7.5'
+    }
+
+    dependencies {
+        compile(
+                "org.codehaus.groovy:groovy-all:$groovyVersion",
+                "com.google.guava:guava:$guavaVersion",
+                "org.slf4j:slf4j-api:$slf4jVersion"
+        )
+        testCompile(
+                "junit:junit:$junitVersion"
+        )
+    }
+}
